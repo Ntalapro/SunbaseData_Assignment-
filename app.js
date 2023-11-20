@@ -1,12 +1,10 @@
 let authToken = "";
-const corsAnywhereUrl = 'http://localhost:3000/https://qa2.sunbasedata.com/sunbase/portal/api';
-
 
     function authenticateUser() {
         const loginId = document.getElementById('login_id').value;
         const password = document.getElementById('password').value;
 
-        fetch(`${corsAnywhereUrl}/assignment_auth.jsp`, {
+        fetch(`https://qa2.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -35,7 +33,7 @@ const corsAnywhereUrl = 'http://localhost:3000/https://qa2.sunbasedata.com/sunba
     }
 
     function getCustomerList() {
-        fetch(`${corsAnywhereUrl}/assignment.jsp?cmd=get_customer_list`, {
+        fetch(`https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=get_customer_list`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${authToken}`
@@ -87,7 +85,7 @@ const corsAnywhereUrl = 'http://localhost:3000/https://qa2.sunbasedata.com/sunba
 
     
 
-        fetch(`${corsAnywhereUrl}/assignment.jsp?cmd=create`, {
+        fetch(`https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -119,7 +117,7 @@ const corsAnywhereUrl = 'http://localhost:3000/https://qa2.sunbasedata.com/sunba
     }
 
     function deleteCustomer(uuid) {
-        fetch(`${corsAnywhereUrl}/assignment.jsp?cmd=delete&uuid=${uuid}`, {
+        fetch(`https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=delete&uuid=${uuid}`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${authToken}`
@@ -152,7 +150,7 @@ const corsAnywhereUrl = 'http://localhost:3000/https://qa2.sunbasedata.com/sunba
         const updatedEmail = prompt('Enter updated email:');
         const updatedPhone = prompt('Enter updated phone number:');
     
-        fetch(`${corsAnywhereUrl}/assignment.jsp?cmd=update&uuid=${uuid}`, {
+        fetch(`https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=update&uuid=${uuid}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
