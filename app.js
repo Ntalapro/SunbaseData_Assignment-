@@ -71,6 +71,11 @@ let authToken = "";
         });
     }
 
+    function gotoAddCustomer(){
+        document.getElementById('customerListScreen').style.display = 'none';
+        document.getElementById('addCustomerScreen').style.display = 'block';
+    }
+
     function createNewCustomer() {
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
