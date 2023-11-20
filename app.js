@@ -21,8 +21,7 @@ let authToken = "";
             return response.json();
         })
         .then(data => {
-            authToken = data.token;
-            console.log(authToken);
+            authToken = data.access_token;
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('customerListScreen').style.display = 'block';
         })
